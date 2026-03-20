@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8 col-lg-6">
+    <div class="row justify-content-end">
+      <div class="col-auto m-3">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="logout()"
+        >
+          Disconnect
+        </button>
+      </div>
+    </div>
+    <div class="card m-3">
+      <h5 class="card-header">Students</h5>
+      <div class="card-body">
+        <div
+          *ngFor="let student of students"
+          class="d-flex justify-content-between align-items-center mb-2"
+        >
+          <span>{{ student.lastName }}</span>
+          <button
+            type="button"
+            data-cy="studentListBtn"
+            class="btn btn-sm btn-outline-primary"
+            (click)="getStudentInfo(student.id)"
+          >
+            See informations
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8 col-lg-6">
+    <div class="card m-3">
+      <h5 class="card-header">Add a student</h5>
+      <div class="card-body">
+        <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input
+              type="text"
+              id="firstName"
+              formControlName="firstName"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input
+              type="text"
+              id="lastName"
+              formControlName="lastName"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="dateOfBirth">Date of birth</label>
+            <input
+              type="date"
+              id="dateOfBirth"
+              formControlName="dateOfBirth"
+              class="form-control"
+            />
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!studentForm.valid"
+            >
+              Add student
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+09/01
+
+Points evoques: 
+-security core regarder doc pour trouver si jwt verif 
+-erreur sur le builder, voir password et authorities
+
+
+16/01
+
+Changer le back end pour accepter les infos dans le body
+@request body a vopir pour parser le corps de la requete
+filter on the backedn to verify the jwt, security config class will handle that
+Authorities surement problem.
+
+
+Still need to see for interceptor on front end, important V
+
+ work on filter  Vlooks ok more logging to see how it behaves
+
+Prenom nom dob V
+
+Student get info need one page front end + V
+
+6 - 9 -13 matin matin midi
+
+
+06/02
+css? no material, Bootstrap? Partir sur bootstrap.
+Guard angular -> protect sutdent endpoints by decode and validate token front side without key
+hanbdle error sur front end 
+test expiration jwt? 
+
+  Guard le plus simple juste verification de presence du token dans le storage => si non alors redirige V
+
+  09/02 10h30
+  front end  V
+
+  et test plan a prevoir ... V? 
+
+09/02
+quel outil pour couverture? jacoco reports ok V
+logout? leger mais mieux pour user experience
+revoir guard+ redirect ... todo still  
+
+continuer sur les test backend pour debrief sur ces tests V unit ok 
+
+13/02 
+
+For coverage 80% do succes test cases then aeasiest or most pertinent test for failures. 
+
+Pour error docker => creuser environnement, pas de probleme sur projet mais lancement container fail donc peut etre environnement pc  V DONE
+
+
+20/01
+
+Remplacer before each test par suite
+
+Exclure le code des DTO et entitites, verifier le % global et atteidnre 80%. Exception peut etre sur handler si besoin => Jacoco config
+
+Rapport de couvertre sur 2 types de test E2E/unit+inte   ...
+
+Harmoniser language sur front end V
+
+Fiche autoeval a remplir. +++ 
+
+Github
+
+27/02
+
+Back end creates bug on test when running long so careful => reset ok V
+
+Finir corriger tests qui passe pas by default V
+
+Pour le front end unit creuser piste proxy. V
+
+Sinon voir tests E2E.  ....
+
+
+Finir register test pour la branche et va regler probleme global coverage V
+
+exclusions dto entitties pour coverage back V
+ 
+Pour cypress coverage se renseigner .... tested webpack and custom builder or smthing. Vite setup 
+
+code coverage 
+vite plugin istanbul
+avec cypress config
+et vute config angular vongig +istanbul
+
+Pour les tests user rajouter charactere random qui empechera le premier test de fail 
+
+Pour le code coverage mettre dans le repo  ...
+
+
+Still quite a few error/warnings tagged by vscode ask about them, look inoffensive to me
+
+Last check needed for keys/tokens still in the code
+
+Priorite test semble ok
+
+Commentaires pour test => demander si explicit titles are ok
+
+
+
+

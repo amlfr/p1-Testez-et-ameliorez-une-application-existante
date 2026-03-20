@@ -1,0 +1,104 @@
+Current test:
+
+Front: 
+
+Jest setup but no cypress. Looks like they are just automatically created test that verify the creation of the components or services. For the app component we also have a small test to verify the title not sure if auto.
+
+Back: 
+
+Test file for usercontroller and userservice 
+
+usercontroller ->   1)registerUserWithoutRequiredData: tries to send request with no info and expect fail
+                    2)registerAlreadyExistUser: tries to register a user thatalready exist and expects failing (verify if it needs to fire 2 times or setup b4)
+                    3)registerUserSuccessful: triews to register a user that does not exist yet in the db, expects a success
+
+userservice ->      1)test_create_null_user_throws_IllegalArgumentException
+                    2)test_create_already_exist_user_throws_IllegalArgumentException
+                    3)test_create_user
+
+
+Test plan:
+
+E2E actions user:   CYPRESS
+
+CREATE  createSuccess
+        createExisting
+
+E2E actions crud:
+
+use login as suite setup
+
+
+CREATE  createSuccess
+        createNoInfo
+        createNoToken
+
+READ    readAll
+        readAllNoToken
+        readStudent
+        readStudentNoToken
+
+UPDATE  updateStudent
+        updateStudentNoToken
+
+DELETE  deleteStudent
+        deleteStudentNoToken
+
+
+E2E navigation: 
+
+REGISTER    access
+            linkLOGIN
+
+LOGIN       access
+            linkREGISTER
+            linkSTUDENTLIST
+
+STUDENTLIST access
+            linkSTUDENTDETAIL
+            accessNoToken
+
+STUDENTDETAIL   access
+                accessNoToken
+
+
+unit:
+
+
+--guard   noTokenReturn
+        tokenReturn
+
+jwtInterceptor  noToken
+                token
+
+studentService  5urls:  requestType  V
+                        url
+                        payload
+
+jwtServiceBE    generateToken  +decoded V
+                verifyToken  
+                isTokenValid 
+                extractUsername 
+                extractAuthorities 
+
+studentServiceBE    createStudent   Student => Student V
+                    findAll         () => studentList
+                    findById        id => Student
+                    update          Student => Student
+                    delete          Student => void
+
+jwtFilterBE     doInternalFilter
+                extractToken    request => jwt 
+
+
+integration:
+
+--guard   tokenSucces
+        noTokenRedirect
+
+studentControllerBE   5urls: verify response code and body, db creation V
+
+
+
+
+

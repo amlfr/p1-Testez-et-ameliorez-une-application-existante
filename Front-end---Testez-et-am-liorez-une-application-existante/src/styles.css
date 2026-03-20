@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.root-container {
+  width: 100%;
+  display: block;
+}
+body {
+  background-color: #192f47;
+  color: #e0e0e0;
+}
+
+.card {
+  background-color: #31415f;
+  color: #f0f0f0;
+}
+
+.btn-primary {
+  background-color: #415a77;
+  border-color: #c1c5ca;
+}
+
+.btn-danger {
+  background-color: #d62828;
+  border-color: #d62828;
+}
+
+input.form-control {
+  background-color: #324a6e;
+  color: #f0f0f0;
+  border: 1px solid #c1c5ca;
+}

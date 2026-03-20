@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card m-3">
+        <h5 class="card-header">Login Form</h5>
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="login">Login</label>
+              <input
+                type="text"
+                id="login"
+                formControlName="login"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                formControlName="password"
+                class="form-control"
+              />
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="!loginForm.valid"
+              >
+                Connexion
+              </button>
+            </div>
+          </form>
+          <div class="text-center mt-3">
+            <p class="mb-0">Don’t have an account?</p>
+            <a routerLink="/register" class="ms-1"> Go to register </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
