@@ -87,7 +87,7 @@ vite plugin istanbul
 avec cypress config
 et vute config angular vongig +istanbul
 
-Pour les tests user rajouter charactere random qui empechera le premier test de fail 
+Pour les tests user rajouter charactere random qui empechera le premier test de fail  V
 
 Pour le code coverage mettre dans le repo  ...
 
@@ -100,6 +100,12 @@ Priorite test semble ok
 
 Commentaires pour test => demander si explicit titles are ok
 
+
+angular 21 manque vitest
+
+
+
+Soi blockage voir upgrade et attentiopnj a zone.js
 
 
 
