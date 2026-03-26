@@ -8,11 +8,11 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudentsService } from '../../core/service/Student/students.service';
 import { Student } from '../../core/models/Student';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-student-detail',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './student-detail.component.html',
 })
 export class StudentDetailComponent implements OnInit {

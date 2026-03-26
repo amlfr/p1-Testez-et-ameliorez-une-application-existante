@@ -6,7 +6,7 @@
           type="button"
           class="btn btn-outline-secondary"
           (click)="logout()"
-        >
+          >
           Disconnect
         </button>
       </div>
@@ -14,20 +14,21 @@
     <div class="card m-3">
       <h5 class="card-header">Students</h5>
       <div class="card-body">
-        <div
-          *ngFor="let student of students"
-          class="d-flex justify-content-between align-items-center mb-2"
-        >
-          <span>{{ student.lastName }}</span>
-          <button
-            type="button"
-            data-cy="studentListBtn"
-            class="btn btn-sm btn-outline-primary"
-            (click)="getStudentInfo(student.id)"
-          >
-            See informations
-          </button>
-        </div>
+        @for (student of students; track student) {
+          <div
+            class="d-flex justify-content-between align-items-center mb-2"
+            >
+            <span>{{ student.lastName }}</span>
+            <button
+              type="button"
+              data-cy="studentListBtn"
+              class="btn btn-sm btn-outline-primary"
+              (click)="getStudentInfo(student.id)"
+              >
+              See informations
+            </button>
+          </div>
+        }
       </div>
     </div>
   </div>
@@ -45,40 +46,40 @@
               id="firstName"
               formControlName="firstName"
               class="form-control"
-            />
-          </div>
+              />
+            </div>
 
-          <div class="form-group">
-            <label for="lastName">Last name</label>
-            <input
-              type="text"
-              id="lastName"
-              formControlName="lastName"
-              class="form-control"
-            />
-          </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input
+                type="text"
+                id="lastName"
+                formControlName="lastName"
+                class="form-control"
+                />
+              </div>
 
-          <div class="form-group">
-            <label for="dateOfBirth">Date of birth</label>
-            <input
-              type="date"
-              id="dateOfBirth"
-              formControlName="dateOfBirth"
-              class="form-control"
-            />
-          </div>
+              <div class="form-group">
+                <label for="dateOfBirth">Date of birth</label>
+                <input
+                  type="date"
+                  id="dateOfBirth"
+                  formControlName="dateOfBirth"
+                  class="form-control"
+                  />
+                </div>
 
-          <div class="text-center">
-            <button
-              type="submit"
-              class="btn btn-success"
-              [disabled]="!studentForm.valid"
-            >
-              Add student
-            </button>
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-success"
+                    [disabled]="!studentForm.valid"
+                    >
+                    Add student
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
-</div>

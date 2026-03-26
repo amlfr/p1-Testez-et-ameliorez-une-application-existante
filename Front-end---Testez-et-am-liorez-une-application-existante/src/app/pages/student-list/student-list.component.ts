@@ -8,13 +8,13 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { StudentsService } from '../../core/service/Student/students.service';
-import { CommonModule } from '@angular/common';
+
 import { Router } from '@angular/router';
 import { Student } from '../../core/models/Student';
 
 @Component({
   selector: 'app-student-list',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.css',
 })
