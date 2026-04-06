@@ -108,4 +108,11 @@ angular 21 manque vitest
 Soi blockage voir upgrade et attentiopnj a zone.js
 
 
+Commande CYPRESS_COVERAGE=true npx vite  -> cy:run -> cy:coverage
+
+Repo Romain fonctionne
+
+Faire upgrade analogjs sur p1 sinon bouger code
+
+
 
