@@ -5,19 +5,27 @@
         <button
           type="button"
           class="btn btn-outline-secondary"
+          data-cy="logout-btn"
           (click)="logout()"
-          >
+        >
           Disconnect
         </button>
       </div>
     </div>
+
     @if (currentStudent) {
       <div class="card m-3">
         <h5 class="card-header">Student informations</h5>
         <div class="card-body">
-          <p><strong>First name :</strong> {{ currentStudent.firstName }}</p>
-          <p><strong>Last name :</strong> {{ currentStudent.lastName }}</p>
-          <p><strong>Date of birth :</strong> {{ currentStudent.dateOfBirth }}</p>
+          <p data-cy="student-firstName">
+            <strong>First name :</strong> {{ currentStudent.firstName }}
+          </p>
+          <p data-cy="student-lastName">
+            <strong>Last name :</strong> {{ currentStudent.lastName }}
+          </p>
+          <p data-cy="student-dob">
+            <strong>Date of birth :</strong> {{ currentStudent.dateOfBirth }}
+          </p>
         </div>
       </div>
     }
@@ -29,56 +37,65 @@
     <div class="card m-3">
       <h5 class="card-header">Modify student informations</h5>
       <div class="card-body">
-        <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+        <form
+          data-cy="update-form"
+          [formGroup]="studentForm"
+          (ngSubmit)="onSubmit()"
+        >
           <div class="form-group">
             <label for="firstName">First name</label>
             <input
               type="text"
               id="firstName"
+              data-cy="update-firstName"
               formControlName="firstName"
               class="form-control"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="lastName">Last name</label>
-              <input
-                type="text"
-                id="lastName"
-                formControlName="lastName"
-                class="form-control"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="dateOfBirth">Date of birth</label>
-                <input
-                  type="date"
-                  id="dateOfBirth"
-                  formControlName="dateOfBirth"
-                  class="form-control"
-                  />
-                </div>
-
-                <div class="d-flex justify-content-between">
-                  <button
-                    type="submit"
-                    class="btn btn-primary"
-                    [disabled]="!studentForm.valid"
-                    >
-                    Update
-                  </button>
-
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    (click)="deleteStudent()"
-                    >
-                    Delete
-                  </button>
-                </div>
-              </form>
-            </div>
+            />
           </div>
-        </div>
+
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input
+              type="text"
+              id="lastName"
+              data-cy="update-lastName"
+              formControlName="lastName"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="dateOfBirth">Date of birth</label>
+            <input
+              type="date"
+              id="dateOfBirth"
+              data-cy="update-dateOfBirth"
+              formControlName="dateOfBirth"
+              class="form-control"
+            />
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <button
+              type="submit"
+              data-cy="update-btn"
+              class="btn btn-primary"
+              [disabled]="!studentForm.valid"
+            >
+              Update
+            </button>
+
+            <button
+              type="button"
+              data-cy="delete-btn"
+              class="btn btn-danger"
+              (click)="deleteStudent()"
+            >
+              Delete
+            </button>
+          </div>
+        </form>
       </div>
+    </div>
+  </div>
+</div>
